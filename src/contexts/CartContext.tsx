@@ -28,6 +28,8 @@ export function CyclesContextProvider({ children }: ICartContextProviderProps) {
   const [state, dispatch] = useReducer(cartReducer, {
     cartItems: [],
     mainItems: coffeesArray,
+    address: {},
+    paymentType: null,
   })
 
   // const [activeCycleId, setActiveCycleId] = useState<string | null>(null)

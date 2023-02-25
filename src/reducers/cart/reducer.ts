@@ -14,9 +14,23 @@ export interface ICartItemState {
   quantity: number
 }
 
+export interface IAddressData {
+  cep: string
+  city: string
+  complement: string
+  district: string
+  n: string
+  state: string
+  street: string
+}
+
+export type IPaymentType = 'credit_card' | 'debit_card' | 'cash' | null
+
 export interface ICartState {
   cartItems: ICartItemState[]
   mainItems: ICoffeeCardData[]
+  address: IAddressData
+  paymentType: IPaymentType
 }
 
 export function cartReducer(state: ICartState, action: any) {
@@ -139,6 +153,16 @@ export function cartReducer(state: ICartState, action: any) {
       return {
         ...state,
         mainItems: decreasedMainItems,
+      }
+    case ActionTypes.SET_ADDRESS_DATA:
+      return {
+        ...state,
+        address: action.payload.addressData,
+      }
+    case ActionTypes.SET_PAYMENT_TYPE_DATA:
+      return {
+        ...state,
+        paymentType: action.payload.paymentTypeData,
       }
     default:
       return state

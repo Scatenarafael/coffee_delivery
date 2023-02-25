@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { CartAbstractFooterContainer } from './styles'
 
 interface ICartAbstractFooter {
@@ -47,11 +46,9 @@ export function CartAbstractFooter({
         </div>
       </div>
 
-      <Link to="/confirmation">
-        <button className="confirmation_btn" onClick={resetCart}>
-          CONFIRMAR PEDIDO
-        </button>
-      </Link>
+      <button className="confirmation_btn" onClick={resetCart}>
+        CONFIRMAR PEDIDO
+      </button>
     </CartAbstractFooterContainer>
   )
 }

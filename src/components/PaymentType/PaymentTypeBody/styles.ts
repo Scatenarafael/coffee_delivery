@@ -25,7 +25,7 @@ export const PaymentTypeBodyContainer = styled.div`
       background-color: ${(props) => props.theme['base-hover']};
     }
 
-    &:active {
+    &.active {
       background-color: ${(props) => props.theme['payment-selected-btn-color']};
       border: 2px solid ${(props) => props.theme['payment-selected-btn-color']};
       box-shadow: 0 0 0 1px

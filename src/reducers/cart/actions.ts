@@ -1,4 +1,4 @@
-import { ICartItemState } from './reducer'
+import { IAddressData, ICartItemState, IPaymentType } from './reducer'
 
 export enum ActionTypes {
   RESET_CART = 'RESET_CART_ITEMS',
@@ -8,6 +8,8 @@ export enum ActionTypes {
   CART_DECREASE_QUANTITY_ITEM = 'DECREASE_QUANTITY_ITEM_OF_CART',
   MAIN_INCREASE_QUANTITY_ITEM = 'INCREASE_QUANTITY_ITEM_OF_MAIN',
   MAIN_DECREASE_QUANTITY_ITEM = 'DECREASE_QUANTITY_ITEM_OF_MAIN',
+  SET_ADDRESS_DATA = 'SET_ADDRESS_DATA',
+  SET_PAYMENT_TYPE_DATA = 'SET_PAYMENT_TYPE_DATA',
 }
 
 interface IAddNewItemToCartAction {
@@ -74,6 +76,22 @@ export function resetCartAction() {
     type: ActionTypes.RESET_CART,
     payload: {
       itemId: '',
+    },
+  }
+}
+export function setAddressDataAction(addressData: IAddressData) {
+  return {
+    type: ActionTypes.SET_ADDRESS_DATA,
+    payload: {
+      addressData,
+    },
+  }
+}
+export function setPaymentTypeAction(paymentTypeData: IPaymentType) {
+  return {
+    type: ActionTypes.SET_PAYMENT_TYPE_DATA,
+    payload: {
+      paymentTypeData,
     },
   }
 }
